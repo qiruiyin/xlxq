@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  @@include('./part/head.html')
+  <title>我的预约</title>
+	<!-- build:css css/appointment.css -->
+	<link rel="stylesheet" href="./css/appointment.css">
+	<!-- endbuild -->
+</head>
+
+<body>
+  <div class="container appointment">
+    <div class="tab">
+    	<div class="tab-header">
+    		<div class="tab-title active">已付款</div>
+    		<div class="tab-title">未付款</div>
+    	</div>
+  		<div class="tab-body tab-body-1 active">
+			 		@@include('./part/img-text.html')
+			 		@@include('./part/img-text.html')
+			 		@@include('./part/img-text.html')
+			 		@@include('./part/img-text.html')
+  		</div>
+  		<div class="tab-body tab-body-2">
+			 		@@include('./part/img-text.html')
+  		</div>
+    </div>
+  </div>
+
+  @@include('./part/foot.html')
+  <!-- build:js js/tab.js -->
+	<script src="./js/tab.js"></script>
+	<!-- endbuild -->
+</body>
+</body>
+</html>

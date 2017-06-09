@@ -1,0 +1,64 @@
+@charset 'utf-8';
+@import  'sandal/core';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+$imgTextImgWidth: 80px;
+$imgTextTextSpanFont: 14px;
+$imgTextTextSpanFontColor: $fontColorGray;
+
+.img-text {
+	position: relative;
+	padding: $padding;
+	background-color: #fff;
+	@include halfpxline(0, $tabBorderColor, 0 , 0, 1px, 0);
+	display: flex;
+}
+
+.img-text-img {
+	width: $imgTextImgWidth;
+}
+
+.img-text-text {
+	flex: 1;
+
+	p {
+		line-height: 1.75;
+	}
+
+	span {
+		font-size: $imgTextTextSpanFont;
+		color: $imgTextTextSpanFontColor;
+		display: block;
+	}
+}
+
+.img-text-status {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 4px 4px 30px 40px;
+	background-color: $bg;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 130%;
+		height: 88%;
+		background: #fff;
+		z-index: 2;
+		transform: rotate(30deg);
+		transform-origin: 0 0;
+	}
+}
+
+.img-text-btn {
+	position: absolute;
+	top: 30px;
+	right: 10px;
+	line-height: 36px;
+	padding: 0 1em;
+	@include halfpxline(4px, $tabBorderColor, 1px, 1px, 1px, 1px);
+	display: inline-block;
+}

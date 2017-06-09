@@ -1,0 +1,53 @@
+@charset 'utf-8';
+@import  'sandal/core';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+.illegal {
+	padding: 10px $padding;
+	line-height: 1.75;
+	@include halfpxline(0, $borderColor, 0, 0, 1px, 0);
+}
+
+.illegal-body {
+
+}
+
+.illegal-footer {
+	p {
+		text-align: justify;
+		word-break: break-word;
+		@extend %clearfix;
+		
+		span {
+			float: right;
+			text-indent: 2em;
+		}
+	}
+}
+
+.car-detail {
+	li {
+		padding: 10px $padding;
+		line-height: 1.75;
+		@include halfpxline(0, $borderColor, 0, 0, 1px, 0);
+		display: flex;
+
+		& > label {
+			display: block;
+		}
+
+		p {
+			text-indent: 1em;
+
+			&:first-child {
+				display: inline-block;
+			}
+		}
+
+		p {
+			span {
+				padding-right: 1em;
+			}
+		}
+	}
+}

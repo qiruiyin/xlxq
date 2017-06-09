@@ -1,0 +1,39 @@
+@charset 'utf-8';
+@import  'sandal/core';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+$tabBorderColor: $borderColor;
+$tabHeaderHeight: 44px;
+$tabTitleActiveBg: $bg;
+
+.tab {
+	width: 100%;
+}
+
+.tab-header	{
+	display: flex;
+}
+
+.tab-title {
+	flex: 1;
+	height: $tabHeaderHeight;
+	line-height: $tabHeaderHeight;
+	text-align: center;
+	@include halfpxline(0, $tabBorderColor, 0 , 0, 1px, 0);
+
+	&:first-child {
+		@include halfpxline(0, $tabBorderColor, 0 , 1px, 1px, 0);
+	}
+
+	&.active {
+		background-color: $tabTitleActiveBg;
+	}
+}
+
+.tab-body {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}

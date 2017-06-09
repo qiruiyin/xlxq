@@ -1,0 +1,70 @@
+@charset 'utf-8';
+@import 'vars';
+
+$ie6-7: false;
+
+// 宽高 start
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+// 宽高 end
+
+// 定位 start
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and 
+        $i + 1 <= length($args) and 
+        type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+ 
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+ 
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+ 
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+// 定位 end
+
+// inline-block start
+@mixin inline-block() {
+  display: inline-block;
+  @if $ie6-7 {
+    zoom: 1;
+    *display: inline;
+  }
+}
+// inline-block end
+
+// 0.5像素的线
+@mixin halfpxline($borderRadius: 100%, $color: $borderColor, $top: 1px, $right: 1px, $bottom: 1px, $left: 1px) {
+  // position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid $color;
+    border-top-width: $top;
+    border-right-width: $right;
+    border-bottom-width: $bottom;
+    border-left-width: $left;
+    width: 200%;
+    height: 200%;
+    transform-origin: 0 0;
+    transform: scale(0.5, 0.5);
+    border-radius: $borderRadius;
+    z-index: 2;
+  }
+}

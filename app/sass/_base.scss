@@ -1,0 +1,44 @@
+@charset 'utf-8';
+@import  'sandal/core', 'sandal/core/reset';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	margin: 0 auto;
+	background-color: $bg;
+}
+
+body {
+	max-width: $maxW;
+	min-width: $minW;
+	font-size: $font;
+	color: $fontColorBlack;
+	background-color: #fff;
+}
+
+.container {
+	width: 100%;
+	// padding: $padding;
+}
+
+// 段落文字
+article {
+	& > h2 {
+		font-size: $fontTitle;
+	}
+
+	& > p {
+		text-indent: 2em;
+		text-align: justify;
+		line-height: 1.5;
+		margin-bottom: $marginBottom;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
