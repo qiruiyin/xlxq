@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Your title">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__STATIC__/css/common.css">
+
+	<title>我的预约</title>
+	<link rel="stylesheet" href="__STATIC__/css/appointment.css">
+</head>
+<body>
+	<div class="container appointment">
+		<div class="tab">
+			<div class="tab-header">
+				<div class="tab-title active">已付款</div>
+				<div class="tab-title">未付款</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-body-content active">
+					<!-- 已付款 -->
+					{volist name="orderDone" id="data"}
+					    <div class="img-text">
+							<img class="img-text-img" src="{$data.id}" alt="">
+							<div class="img-text-text">
+								<div class="title">{$data.merchant_name}</div>
+								<p>{$data.business_name}</p>
+								<p>{$data.car_name} {$data.car_spce}</p>
+								<p>总额：{$data.price}
+									<span>预约时间 {$data.order_date}</span>
+								</p>
+							</div>
+						</div>  
+					{/volist}
+				</div>
+				<div class="tab-body-content">
+					<!-- 未付款 -->
+					{volist name="orderProcess" id="data"}
+					    <div class="img-text">
+							<img class="img-text-img" src="{$data.id}" alt="">
+							<div class="img-text-text">
+								<div class="title">{$data.merchant_name}</div>
+								<p>{$data.business_name}</p>
+								<p>{$data.car_name} {$data.car_spce}</p>
+								<p>总额：{$data.price}
+									<span>预约时间 {$data.order_date}</span>
+								</p>
+							</div>
+						</div>  
+					{/volist}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dependencies -->
+	<script src="__STATIC__/lib/jquery/jquery.js"></script>
+
+	<script src="__STATIC__/js/tab.js"></script>
+</body>
+</html>

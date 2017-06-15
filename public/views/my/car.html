@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Your title">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__STATIC__/css/common.css">
+	<title>我的爱车</title>
+	<link rel="stylesheet" href="__STATIC__/lib/swiper/css/swiper.min.css">
+	<link rel="stylesheet" href="__STATIC__/css/car.css">
+</head>
+
+<body>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	    	{volist name="carDetail" id="data"}
+		   		<div class="swiper-slide">
+		   			<div class="container">
+						<header>
+							<div class="img-text">
+								<img class="img-text-img" src="" alt="">
+								<div class="img-text-text">
+									<p>{$data.car_name}
+										<span>{$data.car_spce}</span>
+									</p>
+								</div>
+							</div>
+						</header>
+						
+						<div class="card">
+							<div class="card-header">违章记录</div>
+							<div class="card-body">
+								<div class="illegal">
+									<div class="illegal-body">闯红灯</div>
+									<div class="illegal-footer">
+										<p>上海市徐汇区虹桥路宜山路dehwflh wlfhew iowen fjlkwwewjkf<span>2017/03/06</span></p>
+									</div>
+								</div>
+								<div class="illegal">
+									<div class="illegal-body">闯红灯</div>
+									<div class="illegal-footer">
+										<p>上海市徐汇区虹桥路宜山路<span>2017/03/06</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header">爱车详情</div>
+							<div class="card-body">
+								<ul class="xlxq-ul car-detail">
+									<li>
+										<label>车牌号码</label>
+										<p>{$data.car_no}</p>
+									</li>
+									<li>
+										<label>发动机号</label>
+										<p>{$data.car_engine}</p>
+									</li>
+									<li>
+										<label>车架号</label>
+										<p>{$data.car_frame}</p>
+									</li>
+									<li>
+										<label>行驶里程数</label>
+										<p>{$data.stroke_count}km</p>
+									</li>
+									<li>
+										<label>日均里程数</label>
+										<p>{$data.daily_mileage}km</p>
+									</li>
+									<li>
+										<label>上次洗车时间</label>
+										<p>{$data.car_wash_time}</p>
+									</li>
+									<li>
+										<label>机油品牌</label>
+										<p>{$data.oil_brand}</p>
+									</li>
+									<li>
+										<label>上一次机油更换里程</label>
+										<p>{$data.oil_mileage}km</p>
+									</li>
+									<li>
+										<label>前轮轮胎规格</label>
+										<p>{$data.front_tire_spec}</p>
+									</li>
+									<li>
+										<label>后轮轮胎规格</label>
+										<p>{$data.back_tire_spec}</p>
+									</li>
+									<li>
+										<label>左前轮胎</label>
+										<div>
+											<p><span>品牌</span>{$data.tire_brandlf}</p>
+											<p><span>上一轮更换轮胎时间</span>{$data.left_front_time}</p>
+										</div>
+									</li>
+									<li>
+										<label>右前轮胎</label>
+										<div>
+											<p><span>品牌</span>{$data.tire_brandrf}</p>
+											<p><span>上一轮更换轮胎时间</span>{$data.right_front_time}</p>
+										</div>
+									</li>
+									<li>
+										<label>左后轮胎</label>
+										<div>
+											<p><span>品牌</span>{$data.tire_brandlr}</p>
+											<p><span>上一轮更换轮胎时间</span>{$data.left_back_time}</p>
+										</div>
+									</li>
+									<li>
+										<label>右后轮胎</label>
+										<div>
+											<p><span>品牌</span>{$data.tire_brandrr}</p>					
+											<p><span>上一轮更换轮胎时间</span>{$data.right_back_time}</p>
+										</div>
+									</li>
+									<li>
+										<label>刹车片品牌</label>
+										<p>{$data.brake_pad_brand}</p>
+									</li>
+									<li>
+										<label>刹车片更换时间</label>
+										<p>{$data.brake_pads_time}</p>
+									</li>
+									<li>
+										<label>刹车油上次更换里程</label>
+										<p>{$data.brake_oil_mileage}km</p>
+									</li>
+									<li>
+										<label>防冻液品牌</label>
+										<p>{$data.antifreeze_brand}</p>
+									</li>
+									<li>
+										<label>防冻液更换里程</label>
+										<p>{$data.antifreeze_mileage}km</p>
+									</li>
+									<li>
+										<label>变速箱油更换里程</label>
+										<p>{$data.transmission_oil_mileage}km</p>
+									</li>
+									<li>
+										<label>滤清器品牌</label>
+										<p>{$data.filter_brand}</p>
+									</li>
+									<li>
+										<label>滤清器更换里程</label>
+										<div>
+											<p><span>机滤</span>{$data.filter_mileage}km</p>
+											<p><span>空滤</span>{$data.air_mileage}km</p>
+											<p><span>燃油滤清</span>{$data.fuel_filter_mileage}km</p>
+											<p><span>空调滤清</span>{$data.air_conditioning_mileage}km</p>
+										</div>
+									</li>
+									<li>
+										<label>保险日期</label>
+										<p>{$data.insurance_time}</p>
+									</li>
+									<li>
+										<label>保险公司名称</label>
+										<p>无</p>
+									</li>
+									<li>
+										<label>登记时间</label>
+									</li>
+									<li>
+										<label>年检日期</label>
+										<p>{$data.inspection_date}</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+		   		</div>
+	   		{/volist}
+	   	</div>
+	</div>
+	<a class="my-carport" href="carport.html">我的车库</a>
+	
+	<script src="__STATIC__/lib/jquery/jquery.js"></script>
+	<script src="__STATIC__/lib/swiper/js/swiper.min.js"></script>
+	<script>
+		(function(){
+			var mySwiper = new Swiper ('.swiper-container', {
+			}) 
+		})();		
+	</script>
+</body>
+</body>
+</html>

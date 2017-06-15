@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Your title">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__STATIC__/css/common.css">
+
+	<title>我的车库</title>
+	<link rel="stylesheet" href="__STATIC__/css/carport.css">
+</head>
+<body>
+	<div class="container carport">
+		{volist name="carDetail" id="data"}
+			<div class="img-text">
+				<img class="img-text-img" src="" alt="">
+				<div class="img-text-text">
+					<p>{$data.car_name}
+						<span>{$data.car_spce}</span>
+					</p>
+					{if condition="($data.car_state == 1)"}
+						<div class="img-text-status">默认</div>				
+					{else /}
+						<div class="img-text-btn" data-userId="{$data.user_id}"  data-id="{$data.id}">设为默认</div>
+					{/if}
+				</div>
+			</div>
+		{/volist}
+	</div>
+
+	<script src="__STATIC__/lib/jquery/jquery.js"></script>
+	<script>
+		(function(){
+			$(document.body).on("click", ".img-text-btn", function(){
+				$userId = $(this).attr("data-userId");
+				$id = $(this).attr("data-id");
+				
+				$.ajax({
+			     	type: 'POST',
+			     	url: './setCarCurrent?userId=' + $userId + '&id=' + $id ,
+				    dataType: 'json',
+				    success: function(e) {
+			    		alert(e.data);
+				    	if(e.success) {
+				    		window.location.reload();
+				    	}
+				    }
+				});
+			});
+		})();
+	</script>
+</body>
+</html>
