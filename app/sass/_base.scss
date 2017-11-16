@@ -1,8 +1,8 @@
 @charset 'utf-8';
-@import  'sandal/core', 'sandal/core/reset';
+@import  'sandal/core';
 @import  'core/mixins', 'core/functions', 'core/vars';
 
-* {
+*, *:before, *:after {
 	box-sizing: border-box;
 }
 
@@ -22,16 +22,17 @@ body {
 
 .container {
 	width: 100%;
-	// padding: $padding;
 }
 
 // 段落文字
 article {
 	& > h2 {
+		padding: 0 $padding;
 		font-size: $fontTitle;
 	}
 
 	& > p {
+		padding: 0 $padding;
 		text-indent: 2em;
 		text-align: justify;
 		line-height: 1.5;
@@ -41,4 +42,20 @@ article {
 			margin-bottom: 0;
 		}
 	}
+}
+
+// 加载更多
+.loadmore {
+	@include halfpxline(0, $borderColor, 0, 0, 1px, 0);
+	width: 100%;
+	height: $loadmoreH;
+	line-height: $loadmoreH;
+	color: $fontColorBlack;
+	text-align: center;
+    display: block;
+    cursor: pointer;
+
+    &.active {
+    	cursor: auto;
+    }
 }

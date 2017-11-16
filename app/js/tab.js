@@ -1,7 +1,7 @@
 $(document.body).on("click", ".tab-title", function(){
-	var ind = $(this).index() + 1;
+	var ind = $(this).index();
 	$(this).addClass("active");
 	$(this).siblings().removeClass("active");
-	$(this).parent().siblings(".tab-body").removeClass("active");
-	$(this).parent().siblings(".tab-body-" + ind).addClass("active");
+	$(this).parent().siblings(".tab-body").find(".tab-body-content").removeClass("active");
+	$(this).parent().siblings(".tab-body").find(".tab-body-content").eq(ind).addClass("active");
 });

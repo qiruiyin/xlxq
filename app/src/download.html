@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Your title">
+	<meta name="format-detection" content="telephone=no">
+	<title>一车独秀</title>
+	<!-- build:css css/swiper.min.css -->
+	<link rel="stylesheet" href="./lib/swiper/dist/css/swiper.min.css">
+	<!-- endbuild -->
+	<!-- build:css css/download.css -->
+	<link rel="stylesheet" href="./css/download.css">
+	<!-- endbuild -->
+</head>
+<body>
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+   		<div class="swiper-slide img1">
+   			<!-- <img src="./img/1.jpg" alt=""> -->
+   		</div>
+   		<div class="swiper-slide img2">
+   			<!-- <img src="./img/2.jpg" alt=""> -->
+   		</div>
+   		<div class="swiper-slide img3">
+   			<!-- <img src="./img/3.jpg" alt=""> -->
+   		</div>
+   		<div class="swiper-slide img4">
+   			<!-- <img src="./img/4.jpg" alt=""> -->
+   		</div>
+   		<div class="swiper-slide img5">
+   			<!-- <img src="./img/5.jpg" alt=""> -->
+   		</div>
+   	</div>
+   	<div class="swiper-pagination"></div>
+   	<div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+	</div>
+
+	<!-- build:js js/jquery.js -->
+	<script src="./lib/jquery/dist/jquery.js"></script>
+	<!-- endbuild -->
+	<!-- build:js js/swiper.min.js -->
+	<script src="./lib/swiper/dist/js/swiper.jquery.min.js"></script>
+	<!-- endbuild -->
+	<script>
+		(function(){
+			var mySwiper = new Swiper ('.swiper-container', {
+				// 如果需要分页器
+		    pagination: '.swiper-pagination',
+		    // 如果需要前进后退按钮
+		    nextButton: '.swiper-button-next',
+		    prevButton: '.swiper-button-prev',
+			    // direction: 'vertical',
+			    // 如果需要滚动条
+			    // scrollbar: '.swiper-scrollbar',
+			}) 
+		})();		
+	</script>
+</body>
+</html>

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  @@include('./part/head.html')
-  <title>我的预约</title>
-	<!-- build:css css/appointment.css -->
+	@@include('./part/head.html')
+	<title>我的预约</title>
+	<!-- build:css __STATIC__/css/appointment.css -->
 	<link rel="stylesheet" href="./css/appointment.css">
 	<!-- endbuild -->
 </head>
-
 <body>
-  <div class="container appointment">
-    <div class="tab">
-    	<div class="tab-header">
-    		<div class="tab-title active">已付款</div>
-    		<div class="tab-title">未付款</div>
-    	</div>
-  		<div class="tab-body tab-body-1 active">
-			 		@@include('./part/img-text.html')
-			 		@@include('./part/img-text.html')
-			 		@@include('./part/img-text.html')
-			 		@@include('./part/img-text.html')
-  		</div>
-  		<div class="tab-body tab-body-2">
-			 		@@include('./part/img-text.html')
-  		</div>
-    </div>
-  </div>
+	<!-- 接口：3.2.0我的预约和历史工单信息查询（已完成） -->
+	<div class="container appointment">
+		<div class="tab">
+			<div class="tab-header">
+				<div class="tab-title active">已付款</div>
+				<div class="tab-title">未付款</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-body-content active">
+					@@include('./part/img-text.html')
+					@@include('./part/img-text.html')
+					@@include('./part/img-text.html')
+					@@include('./part/img-text.html')
+					<a href="javascript:;" class="loadmore"  data-state="0">加载更多</a>
+				</div>
+				<div class="tab-body-content">
+					@@include('./part/img-text.html')
+				</div>
+			</div>
+		</div>
+	</div>
 
-  @@include('./part/foot.html')
-  <!-- build:js js/tab.js -->
+	@@include('./part/foot.html')
+	<!-- build:js __STATIC__/js/tab.js -->
 	<script src="./js/tab.js"></script>
 	<!-- endbuild -->
-</body>
 </body>
 </html>

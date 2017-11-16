@@ -2,10 +2,17 @@
 @import  'sandal/core';
 @import  'core/mixins', 'core/functions', 'core/vars';
 
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 80px;
+    overflow: hidden;
+}  
+
 .illegal {
+	@include halfpxline(0, $borderColor, 0, 0, 1px, 0);
 	padding: 10px $padding;
 	line-height: 1.75;
-	@include halfpxline(0, $borderColor, 0, 0, 1px, 0);
 }
 
 .illegal-body {
@@ -27,9 +34,9 @@
 
 .car-detail {
 	li {
+		@include halfpxline(0, $borderColor, 0, 0, 1px, 0);
 		padding: 10px $padding;
 		line-height: 1.75;
-		@include halfpxline(0, $borderColor, 0, 0, 1px, 0);
 		display: flex;
 
 		& > label {
@@ -50,4 +57,23 @@
 			}
 		}
 	}
+}
+
+.my-carport {
+	@include halfpxline(0, $borderColor, 1px, 0, 0, 0);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	max-width: $maxW;
+	height: 50px;
+	margin: 0 auto;
+	line-height: 50px;
+	background-color: #fff;
+	text-align: center;
+	color: $fontColorBlack;
+	letter-spacing: .5em;
+  	cursor: pointer;
+	z-index: 8;
 }

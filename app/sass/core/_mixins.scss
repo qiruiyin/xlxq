@@ -15,22 +15,22 @@ $ie6-7: false;
   @each $o in top right bottom left {
     $i: index($args, $o);
     @if $i and 
-        $i + 1 <= length($args) and 
-        type-of(nth($args, $i + 1)) == number {
+    $i + 1 <= length($args) and 
+    type-of(nth($args, $i + 1)) == number {
       #{$o}: nth($args, $i + 1);
     }
   }
   position: $position;
 }
- 
+
 @mixin absolute($args: '') {
   @include position(absolute, $args);
 }
- 
+
 @mixin fixed($args: '') {
   @include position(fixed, $args);
 }
- 
+
 @mixin relative($args: '') {
   @include position(relative, $args);
 }
@@ -48,7 +48,8 @@ $ie6-7: false;
 
 // 0.5像素的线
 @mixin halfpxline($borderRadius: 100%, $color: $borderColor, $top: 1px, $right: 1px, $bottom: 1px, $left: 1px) {
-  // position: relative;
+  position: relative;
+  z-index: 2;
 
   &:after {
     content: '';
@@ -65,6 +66,7 @@ $ie6-7: false;
     transform-origin: 0 0;
     transform: scale(0.5, 0.5);
     border-radius: $borderRadius;
-    z-index: 2;
+    z-index: 1;
+    box-sizing: border-box;
   }
 }

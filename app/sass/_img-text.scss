@@ -7,11 +7,11 @@ $imgTextTextSpanFont: 14px;
 $imgTextTextSpanFontColor: $fontColorGray;
 
 .img-text {
-	position: relative;
+	@include halfpxline(0, $tabBorderColor, 0 , 0, 1px, 0);
 	padding: $padding;
 	background-color: #fff;
-	@include halfpxline(0, $tabBorderColor, 0 , 0, 1px, 0);
 	display: flex;
+	overflow: hidden;
 }
 
 .img-text-img {
@@ -20,9 +20,11 @@ $imgTextTextSpanFontColor: $fontColorGray;
 
 .img-text-text {
 	flex: 1;
+	padding-left: 15px;
 
 	p {
 		line-height: 1.75;
+		text-align: justify;
 	}
 
 	span {
@@ -36,7 +38,7 @@ $imgTextTextSpanFontColor: $fontColorGray;
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 4px 4px 30px 40px;
+	padding: 2px 2px 20px 40px;
 	background-color: $bg;
 
 	&:before {
@@ -45,7 +47,7 @@ $imgTextTextSpanFontColor: $fontColorGray;
 		top: 0;
 		left: 0;
 		width: 130%;
-		height: 88%;
+		height: 84%;
 		background: #fff;
 		z-index: 2;
 		transform: rotate(30deg);
@@ -54,11 +56,11 @@ $imgTextTextSpanFontColor: $fontColorGray;
 }
 
 .img-text-btn {
+	@include halfpxline(4px, $tabBorderColor, 1px, 1px, 1px, 1px);
 	position: absolute;
 	top: 30px;
 	right: 10px;
 	line-height: 36px;
 	padding: 0 1em;
-	@include halfpxline(4px, $tabBorderColor, 1px, 1px, 1px, 1px);
 	display: inline-block;
 }
